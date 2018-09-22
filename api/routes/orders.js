@@ -1,15 +1,14 @@
-// _________Dependencies______________________
-
+//_________Dependencies______________________
 
 const express = require('express');
 
 const router = express.Router();
 
 
-// _________________"/orders" ______________________
+//_________________"/orders" ______________________
 
 
-// GET "/orders" request handling
+// GET  "/orders" request handling
 router.get('/', (request, response, next) => {
   response
     .status(200)
@@ -19,11 +18,15 @@ router.get('/', (request, response, next) => {
 });
 
 
-// POST "/orders" request handling
+// POST  "/orders" request handling
 router.post('/', (request, response, next) => {
   const order = {
-    productId: request.body.productId,
-    quantity: request.body.quantity
+    orderId: request.body.orderId,
+    mealType: request.body.mealType,
+    quantity: request.body.quantity,
+    totalPrice: request.body.totalPrice,
+    date: request.body.date,
+    time: request.body.time
   };
   response
     .status(201)
@@ -33,7 +36,7 @@ router.post('/', (request, response, next) => {
     });
 });
 
-// _______________"/orders/{id}" __________________________
+//_______________"/orders/{id}" __________________________
 
 
 // fetch /:orderId request handling
