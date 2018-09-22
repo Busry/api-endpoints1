@@ -4,4 +4,4 @@ node_js:
   - "6.1"
   - "5.11"
   - "5.1"
-  - "0.6"
+  script: jasmine server.js
